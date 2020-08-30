@@ -1,0 +1,28 @@
+version: "3.5"
+
+services:
+  db:
+    container_name: db
+    image: postgres:12.3-alpine
+    environment:
+      POSTGRES_USER: golang
+      POSTGRES_PASSWORD: golang
+      POSTGRES_DB: golang
+    ports:
+      - "5432:5432"
+  api:
+    container_name: api
+    build: .
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_NAME: golang
+      DB_USER: golang
+      DB_PASS: golang
+    ports:
+      - "8000:8000"
+    links:
+      - db
+    depends_on:
+      - db
+    command: ["./wait-for-it.sh", "db:5432", "--", "app"]
