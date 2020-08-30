@@ -1,0 +1,112 @@
+{
+  "vulnerabilities": [
+    {
+      "CVSSv3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N/E:P/RL:U/RC:C",
+      "alternativeIds": [],
+      "creationTime": "2020-06-16T07:53:52.852494Z",
+      "credit": [
+        "Unknown"
+      ],
+      "cvssScore": 6.5,
+      "description": "## Overview\n[rack](https://rack.github.io/) is a minimal, modular and adaptable interface for developing web applications in Ruby. By wrapping HTTP requests and responses in the simplest way possible, it unifies and distills the API for web servers, web frameworks, and software in between (the so-called middleware) into a single method call.\n\nAffected versions of this package are vulnerable to Cross-site Request Forgery (CSRF). It is possible to forge a secure or host-only cookie prefix in Rack using an arbitrary cookie write by using URL encoding (percent-encoding) on the name of the cookie. This could result in an application that is dependent on this prefix to determine if a cookie is safe to process being manipulated into processing an insecure or cross-origin request.\n## Remediation\nUpgrade `rack` to version 2.1.4, 2.2.3 or higher.\n## References\n- [GitHub Commit](https://github.com/rack/rack/commit/5ccca4722668083732ea2d35c56565fcc25312f8)\n",
+      "disclosureTime": "2020-06-16T07:49:27Z",
+      "exploit": "Proof of Concept",
+      "fixedIn": [
+        "2.1.4",
+        "2.2.3"
+      ],
+      "functions": [],
+      "functions_new": [],
+      "id": "SNYK-RUBY-RACK-572377",
+      "identifiers": {
+        "CVE": [
+          "CVE-2020-8184"
+        ],
+        "CWE": [
+          "CWE-352"
+        ],
+        "GHSA": [
+          "GHSA-j6w9-fv6q-3q52"
+        ]
+      },
+      "language": "ruby",
+      "modificationTime": "2020-06-16T15:58:31.854545Z",
+      "moduleName": "rack",
+      "packageManager": "rubygems",
+      "packageName": "rack",
+      "patches": [],
+      "proprietary": false,
+      "publicationTime": "2020-06-16T15:58:32Z",
+      "references": [
+        {
+          "title": "GitHub Commit",
+          "url": "https://github.com/rack/rack/commit/5ccca4722668083732ea2d35c56565fcc25312f8"
+        }
+      ],
+      "semver": {
+        "vulnerable": [
+          "<2.1.4",
+          ">=2.2.0, <2.2.3"
+        ]
+      },
+      "severity": "medium",
+      "title": "Cross-site Request Forgery (CSRF)",
+      "from": [
+        "source@*",
+        "rack-test@1.1.0",
+        "rack@2.2.2"
+      ],
+      "upgradePath": [
+        false,
+        "rack-test@1.1.0",
+        "rack@2.2.3"
+      ],
+      "isUpgradable": true,
+      "isPatchable": false,
+      "name": "rack",
+      "version": "2.2.2"
+    }
+  ],
+  "ok": false,
+  "dependencyCount": 75,
+  "org": "voxper",
+  "policy": "# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.\nversion: v1.19.0\nignore: {}\npatch: {}\n",
+  "isPrivate": true,
+  "licensesPolicy": {
+    "severities": {},
+    "orgLicenseRules": {}
+  },
+  "packageManager": "rubygems",
+  "ignoreSettings": {
+    "adminOnly": false,
+    "reasonRequired": true,
+    "disregardFilesystemIgnores": false
+  },
+  "summary": "1 vulnerable dependency path",
+  "remediation": {
+    "unresolved": [],
+    "upgrade": {
+      "rack-test@1.1.0": {
+        "upgradeTo": "rack-test@1.1.0",
+        "upgrades": [
+          "rack@2.2.2"
+        ],
+        "vulns": [
+          "SNYK-RUBY-RACK-572377"
+        ]
+      }
+    },
+    "patch": {},
+    "ignore": {},
+    "pin": {}
+  },
+  "filesystemPolicy": false,
+  "filtered": {
+    "ignore": [],
+    "patch": []
+  },
+  "uniqueCount": 1,
+  "projectName": "source",
+  "displayTargetFile": "Gemfile",
+  "path": "/home/voxper/repos/test"
+}
