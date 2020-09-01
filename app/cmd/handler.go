@@ -5,7 +5,7 @@ import(
   "net/http"
   "reflect"
   "encoding/json"
-  "github.com/jinzhu/gorm"
+  "github.com/t0mbs/gorm"
   "log"
 )
 
@@ -40,8 +40,6 @@ type ErrorResponse struct {
   Response
   Message string `json:"message"`
 }
-
-
 
 func (h *Handler) Close() {
   h.Request.Body.Close()

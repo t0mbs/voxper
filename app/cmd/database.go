@@ -5,8 +5,8 @@ import (
   "log"
   "reflect"
   "strings"
-  "github.com/jinzhu/gorm"
-  _ "github.com/jinzhu/gorm/dialects/postgres"
+  "github.com/t0mbs/gorm"
+  _ "github.com/t0mbs/gorm/dialects/postgres"
 )
 
 // Struct holding Go-ORM database pointer, registry and connection information
