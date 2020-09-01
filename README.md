@@ -1,4 +1,4 @@
-# Voxper 0.1.0
+# Voxper 0.1.1
 
 ## Introduction
 > Voxper is a a REST API written in Go that acts as a vulnerability management tool, to be used in the context of security orchestration. It is intended to be middleware; ingesting, parsing and standardizing scan results from a variety of engines. This tool currently in its MVP state and should not be used in a production setting. It currently lacks basic functionality such as; encryption, API authentication keys, and user management.
@@ -29,5 +29,4 @@ docker-compose up
 * REST API Specs: https://restfulapi.net/
 * Response Specs: https://github.com/omniti-labs/jsend
 * Project layout: https://github.com/golang-standards/project-layout
-* Github Pages for the website
 * CVSS 3.1: https://www.first.org/cvss/specification-document
